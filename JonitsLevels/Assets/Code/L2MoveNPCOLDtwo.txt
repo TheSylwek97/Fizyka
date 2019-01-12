@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class L2MoveNPCOLDtwo : MonoBehaviour {
+
+    private Transform playerTransform;
+    [SerializeField] float speed;
+    [SerializeField] float rotation;
+    [SerializeField] float force = 10f;
+
+    public Transform centerOverlabBox;
+    private  Rigidbody rb;
+
+
+    // Use this for initialization
+    void Start () {
+        rb = GetComponent<Rigidbody>();
+    }
+
+	  bool IsGrounded()
+    {
+        var listCols = Physics.OverlapSphere(centerOverlabBox.position, 0.01f);
+
+        if (listCols.Length > 0) return true;
+        else return false;
+    }
+
+	// Update is called once per frame
+	void FixedUpdate () {
+
+        if (IsGrounded() == true)
+        {
+            
+            rb.AddForce(0f, 0f, 1f * force);
+        }
+
+        else
+        {
+
+        }
+
+
+
+
+    }
+
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        playerTransform = transform;
+    }
+  
+}
