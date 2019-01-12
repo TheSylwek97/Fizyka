@@ -4,21 +4,41 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    bool goLeft;
+    
 	
-	// Update is called once per frame
 	void Update () {
+
+        if (goLeft == false)
+            GoRight();
+
+        else
+            GoLeft();
+    }
+
+    void GoRight()
+    {
 
         var x = Time.deltaTime * 150.0f;
         var z = Time.deltaTime * 3.0f;
-        do
-        {
-            transform.Translate(0, 0, z);
-
-        } while (z < 10);
+        transform.Translate(0, 0, z);
 
     }
+
+    void GoLeft()
+    {
+        var x = Time.deltaTime * 150.0f;
+        var z = Time.deltaTime * -3.0f;
+
+        transform.Translate(0, 0, z);
+    }
+
+    void OnTriggerEnter()
+    {
+        if(goLeft == false)
+            goLeft = true;
+        else
+            goLeft = false;
+    }
+    
 }
