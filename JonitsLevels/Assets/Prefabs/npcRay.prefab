@@ -9,77 +9,76 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1267093654049422}
+  m_RootGameObject: {fileID: 1603792221612574}
   m_IsPrefabAsset: 1
---- !u!1 &1228823465492774
+--- !u!1 &1603792221612574
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4196355411061366}
+  - component: {fileID: 4199422954846772}
+  - component: {fileID: 33937802083859154}
+  - component: {fileID: 23166628087860076}
+  - component: {fileID: 65579039413401488}
+  - component: {fileID: 54505197713748950}
+  - component: {fileID: 114333912830839756}
   m_Layer: 0
-  m_Name: OverLabBox
+  m_Name: npcRay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1267093654049422
+--- !u!1 &1862170563425494
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4987891941667692}
-  - component: {fileID: 33613445107250770}
-  - component: {fileID: 23454788574894336}
-  - component: {fileID: 65051958441403864}
-  - component: {fileID: 54321100748709734}
-  - component: {fileID: 114587742751322028}
-  - component: {fileID: 65122061306000008}
+  - component: {fileID: 4548148891408856}
   m_Layer: 0
-  m_Name: NPC 1
+  m_Name: Checker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4196355411061366
+--- !u!4 &4199422954846772
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1228823465492774}
+  m_GameObject: {fileID: 1603792221612574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.553, z: 0.865}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4987891941667692}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4987891941667692
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.03, z: 39.38}
+  m_LocalPosition: {x: -59.04503, y: 1.7822455, z: 3.8907142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4196355411061366}
+  - {fileID: 4548148891408856}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23454788574894336
+--- !u!4 &4548148891408856
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862170563425494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -0.51, z: 0.874}
+  m_LocalScale: {x: 0.72, y: 0.34, z: 0.7}
+  m_Children: []
+  m_Father: {fileID: 4199422954846772}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23166628087860076
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
+  m_GameObject: {fileID: 1603792221612574}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -89,7 +88,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 20113812c96e2ee41b08a49ac6cbc444, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,19 +108,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33613445107250770
+--- !u!33 &33937802083859154
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
+  m_GameObject: {fileID: 1603792221612574}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54321100748709734
+--- !u!54 &54505197713748950
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
+  m_GameObject: {fileID: 1603792221612574}
   serializedVersion: 2
   m_Mass: 20
   m_Drag: 0
@@ -131,42 +130,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &65051958441403864
+--- !u!65 &65579039413401488
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
+  m_GameObject: {fileID: 1603792221612574}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65122061306000008
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 0.5, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114587742751322028
+--- !u!114 &114333912830839756
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267093654049422}
+  m_GameObject: {fileID: 1603792221612574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8a716a2c1d69324a957bb39b45861e9, type: 3}
+  m_Script: {fileID: 11500000, guid: fb7082faca3dd8344bf7c4e80061cf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOverlabBox: {fileID: 4196355411061366}
-  walkSpeed: 5
-  attackDistance: 1
-  player: {fileID: 0}
+  groundCheck: {fileID: 4548148891408856}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1024
