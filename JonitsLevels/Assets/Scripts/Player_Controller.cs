@@ -141,7 +141,7 @@ public class Player_Controller : MonoBehaviour
     {
 
         anima.enabled = false;
-        SetRigidbodiesToKinematic(true);
+        //SetRigidbodiesToKinematic(true);
         Invoke("SwitchToAnimatedCharacter", 5f);
     }
 

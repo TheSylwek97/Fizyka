@@ -18,18 +18,13 @@ public class Move : MonoBehaviour {
 
     void GoRight()
     {
-
-        var x = Time.deltaTime * 150.0f;
         var z = Time.deltaTime * 3.0f;
         transform.Translate(0, 0, z);
-
     }
 
     void GoLeft()
     {
-        var x = Time.deltaTime * 150.0f;
         var z = Time.deltaTime * -3.0f;
-
         transform.Translate(0, 0, z);
     }
 
@@ -37,6 +32,7 @@ public class Move : MonoBehaviour {
     {
         if(goLeft == false)
             goLeft = true;
+
         else
             goLeft = false;
     }
