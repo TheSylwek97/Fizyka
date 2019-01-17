@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class Raycasting : MonoBehaviour {
 
-    void Update()
+   
+    [SerializeField]Transform groundCheck;
+    [SerializeField]LayerMask groundMask;
+
+    float rayDistance;
+    Vector3 rayDirection;
+
+    void FixedUpdate()
     {
         var x = Time.deltaTime * 150.0f;
         var z = Time.deltaTime * 3.0f;
 
+        rayDirection = groundCheck.position - transform.position;
+        rayDistance = rayDirection.magnitude;
 
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
+        //RaycastHit hit;
+        if (Physics.Raycast(transform.position, rayDirection, rayDistance, groundMask))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+            Debug.DrawRay(transform.position, rayDirection * rayDistance, Color.yellow);
             Debug.Log("Did Hit");
-           transform.Rotate(0, x, 0);
+           transform.Translate(0, 0, z);
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1000, Color.white);
+            Debug.DrawRay(transform.position, rayDirection * 1000, Color.white);
             Debug.Log("Did not Hit");
-           transform.Translate(0, 0, z);
+           transform.Rotate(0, x, 0);
         }
     }
-}
 
+}

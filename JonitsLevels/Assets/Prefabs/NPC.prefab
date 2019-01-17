@@ -89,7 +89,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7ecfaa0f499ed04418c8d8d4ac152c72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,5 +168,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerOverlabBox: {fileID: 4518146905999196}
   walkSpeed: 5
-  attackDistance: 1.5
+  attackDistance: 1
   player: {fileID: 0}
