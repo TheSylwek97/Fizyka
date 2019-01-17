@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TragetToShoot
   - Target
+  - NPC
   layers:
   - Default
   - TransparentFX

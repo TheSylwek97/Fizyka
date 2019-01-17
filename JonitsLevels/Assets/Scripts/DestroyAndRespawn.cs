@@ -5,11 +5,18 @@ using UnityEngine;
 public class DestroyAndRespawn : MonoBehaviour {
 
     [SerializeField] GameObject enemyToRespawn;
+    [SerializeField] Transform placeToRespawn;
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if(other.tag == "NPC")
+        {
+            Destroy(other.gameObject);
+            var enemyInstance = Instantiate(enemyToRespawn, placeToRespawn.position, Quaternion.identity) as GameObject;
+        }
 
-        var enemyInstance = Instantiate(enemyToRespawn, transform.position, Quaternion.identity) as GameObject;
+        else
+            Destroy(other.gameObject);
+
     }
 }
