@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/*
 public class KillerSphere : MonoBehaviour
 {
 
@@ -46,3 +46,4 @@ public class KillerSphere : MonoBehaviour
     }
 }
 
+    */

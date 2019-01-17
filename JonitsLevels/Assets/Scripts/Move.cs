@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour {
 
     bool goLeft;
-    [SerializeField] float speed = 1;
+    [SerializeField] float speed = 3;
 	
 	void Update () {
 
@@ -18,13 +18,13 @@ public class Move : MonoBehaviour {
 
     void GoRight()
     {
-        var z = Time.deltaTime * 3.0f * speed;
+        var z = Time.deltaTime * speed;
         transform.Translate(0, 0, z);
     }
 
     void GoLeft()
     {
-        var z = Time.deltaTime * -3.0f * speed;
+        var z = Time.deltaTime * -1.0f * speed;
         transform.Translate(0, 0, z);
     }
 

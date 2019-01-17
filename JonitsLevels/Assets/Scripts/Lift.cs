@@ -6,21 +6,15 @@ public class Lift : MonoBehaviour {
 
     bool ShouldGoUp;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         var x = transform.position.x;
         var z = transform.position.z;
         var y = transform.position.y;
+
         if (ShouldGoUp == true)
         {
-            y = transform.position.y + 0.01f;
+            y = transform.position.y + 0.05f;
 
             transform.position = new Vector3(x, y, z);
         }

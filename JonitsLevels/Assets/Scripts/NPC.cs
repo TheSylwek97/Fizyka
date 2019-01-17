@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    private Transform playerTransform;
+   // private Transform playerTransform;
 
     public Transform centerOverlabBox; // radius = 0,01f
-    private Rigidbody rb;
+    //private Rigidbody rb;
     public float walkSpeed = 5.0f;
     public float attackDistance = 3.0f;
     public GameObject player;
@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+       // rb = GetComponent<Rigidbody>();
     }
 
     bool IsGrounded()
@@ -64,8 +64,8 @@ public class NPC : MonoBehaviour
     }
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        playerTransform = transform;
+       // rb = GetComponent<Rigidbody>();
+        //playerTransform = transform;
     }
 
     void OnTriggerStay(Collider other)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Controller : MonoBehaviour
 {
     [SerializeField] float jumpForce = 5f;
-    private Transform playerTransform;
+    //private Transform playerTransform;
     public Transform srodekOverlabBoxa;
 
 
@@ -44,7 +44,6 @@ public class Player_Controller : MonoBehaviour
     void Update()
     {
         //skakanie 
-
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -55,8 +54,8 @@ public class Player_Controller : MonoBehaviour
 
         transform.Translate(0, 0, x);
         rb.angularVelocity = new Vector3(0, z, 0);
-        //skradanie
 
+        //skradanie
         if (Input.GetKey(KeyCode.LeftControl))
         {
             //kontroler skradania
@@ -64,20 +63,12 @@ public class Player_Controller : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
-                anima.SetBool("isWalking", false);
-                anima.SetBool("isIdle", false);
-                anima.SetBool("isRunning", false);
-                anima.SetBool("isSneaking", true);
-
+                Sneaking();
             }
 
             else
             {
-                anima.SetBool("isWalking", false);
-                anima.SetBool("isIdle", true);
-                anima.SetBool("isRunning", false);
-                anima.SetBool("isSneaking", false);
-
+                Idle();
             }
         }
         else if (Input.GetKey(KeyCode.LeftShift))
@@ -87,55 +78,69 @@ public class Player_Controller : MonoBehaviour
             //kontroler biegu
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
-                anima.SetBool("isWalking", false);
-                anima.SetBool("isIdle", false);
-                anima.SetBool("isRunning", true);
-                anima.SetBool("isSneaking", false);
+                Running();
             }
 
             else
             {
-                anima.SetBool("isWalking", false);
-                anima.SetBool("isIdle", true);
-                anima.SetBool("isRunning", false);
-                anima.SetBool("isSneaking", false);
-
+                Idle();
             }
         }
 
         //chodzenie
-
-        else //if (!isSneaking)
+        else
         {
             movementSpeed = walkSpeed;
             //kontroler chodzenia
-
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
             {
-                anima.SetBool("isWalking", true);
-                anima.SetBool("isRunning", false);
-                anima.SetBool("isIdle", false);
-                anima.SetBool("isSneaking", false);
-
+                Walking();
             }
 
             else
             {
-                anima.SetBool("isWalking", false);
-                anima.SetBool("isRunning", false);
-                anima.SetBool("isIdle", true);
-                anima.SetBool("isSneaking", false);
-
+                Idle();
             }
 
         }
     }
 
-    private void Awake()
+    private void Running()
     {
-        playerTransform = transform;
+        anima.SetBool("isWalking", false);
+        anima.SetBool("isIdle", false);
+        anima.SetBool("isRunning", true);
+        anima.SetBool("isSneaking", false);
     }
 
+    private void Walking()
+    {
+        anima.SetBool("isWalking", true);
+        anima.SetBool("isRunning", false);
+        anima.SetBool("isIdle", false);
+        anima.SetBool("isSneaking", false);
+    }
+
+    private void Idle()
+    {
+        anima.SetBool("isWalking", false);
+        anima.SetBool("isIdle", true);
+        anima.SetBool("isRunning", false);
+        anima.SetBool("isSneaking", false);
+    }
+
+    private void Sneaking()
+    {
+        anima.SetBool("isWalking", false);
+        anima.SetBool("isIdle", false);
+        anima.SetBool("isRunning", false);
+        anima.SetBool("isSneaking", true);
+    }
+
+    private void Awake()
+    {
+      //  playerTransform = transform;
+    }
 
     public void SwitchToRagdoll()
     {
